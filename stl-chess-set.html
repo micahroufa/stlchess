@@ -12,18 +12,18 @@ body { background: #0A0908; color: #E8E0D4; font-family: 'Palatino Linotype', 'B
 h1 { font-size: 48px; font-weight: 400; letter-spacing: 2px; line-height: 1.2; color: #F0E8D8; margin-bottom: 8px; }
 .subtitle { font-size: 20px; color: #C4A265; font-style: italic; margin-bottom: 16px; }
 .tagline { font-size: 15px; color: #9A8E7A; font-style: italic; max-width: 560px; margin: 0 auto; line-height: 1.7; }
-.nav { display: flex; justify-content: center; gap: 32px; padding: 24px 0; border-bottom: 1px solid rgba(196,162,101,0.1); }
+.nav { display: flex; justify-content: center; gap: 24px; padding: 24px 0; border-bottom: 1px solid rgba(196,162,101,0.1); flex-wrap: wrap; }
 .nav button { background: none; border: none; color: #6B5F4E; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; padding: 8px 4px; border-bottom: 1px solid transparent; font-family: 'Trebuchet MS', sans-serif; transition: all 0.3s; }
 .nav button.active { color: #C4A265; border-bottom-color: #C4A265; }
 .content { max-width: 640px; margin: 0 auto; padding: 40px 20px 60px; }
 .section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #C4A265; margin-bottom: 12px; font-family: 'Trebuchet MS', sans-serif; }
+.section-label-red { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #B4503C; margin-bottom: 12px; font-family: 'Trebuchet MS', sans-serif; }
 .card { margin-bottom: 20px; padding: 24px 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(196,162,101,0.08); }
 .card p { font-size: 14px; line-height: 1.8; color: #B0A590; }
 .narrative-card { margin-bottom: 28px; padding: 24px 28px; background: rgba(255,255,255,0.02); border-left: 2px solid rgba(196,162,101,0.2); }
 .narrative-card h3 { font-size: 16px; color: #E8D5A8; margin-bottom: 12px; letter-spacing: 0.5px; font-weight: 400; }
 .narrative-card p { font-size: 14px; line-height: 1.8; color: #9A8E7A; }
 .close-block { margin-top: 48px; padding: 32px 28px; background: linear-gradient(135deg, rgba(196,162,101,0.06), rgba(196,162,101,0.02)); border: 1px solid rgba(196,162,101,0.15); text-align: center; }
-.close-block .icon { font-size: 28px; color: #C4A265; margin-bottom: 16px; }
 .close-block p { font-size: 15px; line-height: 1.8; color: #B0A590; max-width: 480px; margin: 0 auto; font-style: italic; }
 .close-block .lp { margin-top: 24px; font-size: 20px; color: #E8D5A8; letter-spacing: 4px; }
 .close-block .emm { margin-top: 32px; font-size: 11px; color: #6B5F4E; font-style: italic; }
@@ -34,9 +34,11 @@ h1 { font-size: 48px; font-weight: 400; letter-spacing: 2px; line-height: 1.2; c
 .piece-btn.active { background: rgba(196,162,101,0.12); border-color: rgba(196,162,101,0.4); color: #C4A265; }
 .piece-btn .sym { font-size: 28px; margin-bottom: 4px; }
 .piece-btn .lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Trebuchet MS', sans-serif; }
-.piece-detail { max-width: 640px; margin: 32px auto 0; border: 1px solid rgba(196,162,101,0.15); background: rgba(255,255,255,0.02); display: none; }
-.piece-detail.active { display: block; }
+.piece-imgs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.piece-imgs .pair { display: flex; gap: 8px; }
+.piece-imgs img { border-radius: 4px; border: 1px solid rgba(196,162,101,0.15); }
 .identity { max-width: 640px; margin: 40px auto 0; padding: 32px 28px; background: rgba(196,162,101,0.06); border: 1px solid rgba(196,162,101,0.15); text-align: center; }
+.set-img { width: 100%; border-radius: 4px; border: 1px solid rgba(196,162,101,0.15); margin-bottom: 8px; }
 </style>
 </head>
 <body>
@@ -44,18 +46,32 @@ h1 { font-size: 48px; font-weight: 400; letter-spacing: 2px; line-height: 1.2; c
 <div class="header">
 <div class="header-top">Delmar + Trinity + Washington</div>
 <h1>Let's Play</h1>
-<div class="subtitle">♚ St. Louis, Missouri ♚</div>
+<div class="subtitle">St. Louis, Missouri</div>
 <div class="tagline">Chess is a miniature world. This is the one built in St. Louis.<br>Every move matters.</div>
 </div>
 
 <div class="nav">
-<button class="active" onclick="showView('pieces')">The Pieces</button>
+<button class="active" onclick="showView('theset')">The Set</button>
+<button onclick="showView('pieces')">The Pieces</button>
 <button onclick="showView('board')">The Board</button>
 <button onclick="showView('narrative')">The Game and the City</button>
 <button onclick="showView('venue')">The Venue</button>
 </div>
 
-<div id="pieces" class="view active">
+<div id="theset" class="view active">
+<div class="content">
+<h2 style="font-size:24px;font-weight:400;letter-spacing:2px;text-align:center;margin-bottom:40px;color:#E8E0D4">The Set</h2>
+<div style="margin-bottom:32px"><div class="section-label" style="text-align:center">Gold</div><img src="images/sets/goldside.PNG" class="set-img" alt="Gold side"></div>
+<div style="margin-bottom:32px"><div class="section-label-red" style="text-align:center">Red</div><img src="images/sets/redside.PNG" class="set-img" style="border-color:rgba(180,80,60,0.15)" alt="Red side"></div>
+<div style="display:flex;gap:16px;margin-bottom:32px">
+<div style="flex:1"><div class="section-label" style="text-align:center">Gold Pawns</div><img src="images/sets/goldpawns.png" class="set-img" alt="Gold pawns"></div>
+<div style="flex:1"><div class="section-label-red" style="text-align:center">Red Pawns</div><img src="images/sets/redpawnset.png" class="set-img" style="border-color:rgba(180,80,60,0.15)" alt="Red pawns"></div>
+</div>
+<div class="card"><p style="font-style:italic">Two sides, one city. Red for the field: courage, the Spanish and French and American blood that built this place. Gold for the bezant: the city itself, the Louisiana Purchase, the convergence point. The distinction is finish, not allegiance. Both sides are St. Louis.</p></div>
+</div>
+</div>
+
+<div id="pieces" class="view">
 <div class="content">
 <div class="identity">
 <div class="section-label">St. Louis, Missouri</div>
@@ -67,31 +83,34 @@ h1 { font-size: 48px; font-weight: 400; letter-spacing: 2px; line-height: 1.2; c
 </div>
 </div>
 
-<div id="board" class="view">
-<div class="content" id="board-content"></div>
-</div>
+<div id="board" class="view"><div class="content" id="board-content"></div></div>
+<div id="narrative" class="view"><div class="content" id="narrative-content"></div></div>
+<div id="venue" class="view"><div class="content" id="venue-content"></div></div>
 
-<div id="narrative" class="view">
-<div class="content" id="narrative-content"></div>
-</div>
-
-<div id="venue" class="view">
-<div class="content" id="venue-content"></div>
-</div>
-
-<div class="footer">© 2026 PrePost, LLC. All rights reserved.</div>
+<div class="footer">© 2026 Pre_Post, LLC. All rights reserved.</div>
 
 <script>
 const pieces = [
-{role:"King",name:"St. Louis Chess Club",sym:"♚",height:"4.5″",form:"The tallest piece on the board — bearing the club's logo on its body. The form honors the classic Staunton king profile: cross finial, crown band, tapered body. The logo is the only marking. It doesn't need anything else.",rationale:"The most important piece on the board. Everything else exists to protect it. The St. Louis Chess Club made this city the Chess Capital of the United States — designated by Congress in 2014. The World Chess Hall of Fame sits directly across the street. The club hosts the U.S. Championship, the Sinquefield Cup, and the Cairns Cup. It puts chess into public schools. It draws the world's strongest players to a building on Euclid Avenue. A game honored for fifteen hundred years found a new capital. Every player plays the same 64 squares."},
-{role:"Queen",name:"The Rivers",sym:"♛",height:"4.25″",form:"The confluence Y from the St. Louis city flag — two fluid forms rising from a single base, splitting outward with the organic authority of moving water. The most powerful piece takes the most elemental form. No architecture, no figure — just force.",rationale:"The Mississippi and Missouri converge at St. Louis. That's why the city exists. The rivers go everywhere, reach everything, shaped everything. They carried the fur trade, the steamboats, the 1993 flood, the commerce that built the Gateway. The queen moves in every direction with unlimited range. The rivers do the same. The city flag carries their confluence as a wavy Y — the oldest and most fundamental symbol of why St. Louis is where it is. One is the game's most powerful piece. The other is the region's most powerful force. Neither asks permission."},
-{role:"Bishop",name:"Cardinals & Blues",sym:"♝",height:"3.5″",form:"Two bishops, two sports. Bishop 1: The traditional bishop profile with the Cardinals bird-on-bat on its body. Bishop 2: The same profile bearing the Blue Note. One warm, one cool. One summer, one winter.",rationale:"Bishops work in pairs but never share a square — one lives on light, one on dark. The Cardinals and Blues do the same thing: two sports, two seasons, two emotional registers that never overlap. The Cardinals have 11 World Series titles and Busch Stadium roaring in October. The Blues won the Stanley Cup in 2019 and the whole city lost its mind in June. Together they cover the entire emotional calendar of St. Louis. Light square, dark square. Summer, winter. One side of the heart, then the other. They never cross paths, but together they cover everything."},
-{role:"Knight",name:"Budweiser Clydesdales",sym:"♞",height:"3.75″",form:"A Clydesdale — the full animal, not just the head. Feathered hooves, braided mane, the powerful arched neck, the muscular chest. Standing foursquare on the base, built to carry weight. Not a generic horse. A specific, recognizable, St. Louis horse.",rationale:"Knights are horses. The Clydesdales are THE St. Louis horse — pulling the Budweiser wagon since 1933, introduced to celebrate the end of Prohibition. They walk through downtown during the holidays. They appear at the brewery campus year-round. The knight is the only piece on the board that can leap over others — the move nobody sees coming, the piece that changes geometry. The Clydesdales are the same: impossibly large animals moving with impossible grace. These are the pieces visitors reach for first. This Bud's for you."},
-{role:"Rook",name:"6900 Delmar & 6901 Washington",sym:"♜",height:"3.5″ / 4″",form:"Two buildings, two rooks. Rook 1: 6900 Delmar — the Christian Science building at chess scale. Horizontal massing, Classical Revival facade, the coffered dome visible on top, the colonnade suggested with minimal columns. The dome is the crown, sitting low and wide. Rook 2: 6901 Washington — the Methodist church at chess scale. Gothic Revival verticality, the bell tower rising from the body, Gothic pinnacles at the corners, pointed arch windows along the flanks. The tower pulls the eye upward.",rationale:"The rook is the castle. These are the castles. 6900 Delmar was built in 1924 by T.P. Barnett — a dome building listed on the National Register of Historic Places since 1980. Corinthian columns, coffered interior, steel-and-concrete structure hidden inside a classical shell. 6901 Washington was built in 1920 — Gothic Revival reaching skyward, a congregation of over 1,000 at its peak. Same block, same era, opposite architectures. One spreads wide. One reaches up. Now they're miniworld's home — an immersive destination where miniature worlds come to life inside two landmark churches. Two buildings on a chessboard. Two buildings on a city block. The dialogue between them is the same in both worlds — a conversation across the board, move by move, century by century."},
-{role:"Pawn",name:"Fleur-de-lis",sym:"♟",height:"2.5″",form:"The three-petaled fleur-de-lis rising from a pawn base. Clean, heraldic, repeatable at small scale. All eight identical — the city's pattern, uniform and democratic. The form is simple enough to read at 2.5 inches, complex enough to reward a closer look.",rationale:"On every lamppost. Every civic building. The city flag. The fleur-de-lis is the oldest and most repeated symbol in St. Louis — French origin, royal lineage, democratic deployment. It predates the Arch, the Cardinals, the brewery. It was here before the city was American. Eight across the front rank — the first line of defense, the smallest unit of the city's identity. Individually expendable, collectively devastating. Promotion awaits any pawn that crosses the board."}
+{role:"King",name:"St. Louis Chess Club",sym:"♚",height:'4.5″',goldImgs:["images/gold/goldking.PNG"],redImgs:["images/red/redking.PNG"],
+form:"The tallest piece on the board — bearing the club's logo on its body. The form honors the classic Staunton king profile: cross finial, crown band, tapered body. The logo is the only marking. It doesn't need anything else.",
+rationale:"The most important piece on the board. Everything else exists to protect it. The St. Louis Chess Club made this city the Chess Capital of the United States — designated by Congress in 2014. The World Chess Hall of Fame sits directly across the street. The club hosts the U.S. Championship, the Sinquefield Cup, and the Cairns Cup. It puts chess into public schools. It draws the world's strongest players to a building on Euclid Avenue. A game honored for fifteen hundred years found a new capital. Every player plays the same 64 squares."},
+{role:"Queen",name:"The Rivers",sym:"♛",height:'4.25″',goldImgs:["images/gold/godqueen.PNG"],redImgs:["images/red/redqueen.PNG"],
+form:"The confluence Y from the St. Louis city flag — two fluid forms rising from a single base, splitting outward with the organic authority of moving water. The most powerful piece takes the most elemental form. No architecture, no figure — just force.",
+rationale:"The Mississippi and Missouri converge at St. Louis. That's why the city exists. The rivers go everywhere, reach everything, shaped everything. They carried the fur trade, the steamboats, the 1993 flood, the commerce that built the Gateway. The queen moves in every direction with unlimited range. The rivers do the same. The city flag carries their confluence as a wavy Y — the oldest and most fundamental symbol of why St. Louis is where it is. One is the game's most powerful piece. The other is the region's most powerful force. Neither asks permission."},
+{role:"Bishop",name:"Cardinals & Blues",sym:"♝",height:'3.5″',goldImgs:["images/gold/goldbirdbishop.PNG","images/gold/goldbluesbishop.PNG"],redImgs:["images/red/redbirdbishop.PNG","images/red/redbluesbishop.PNG"],
+form:"Two bishops, two sports. Bishop 1: The traditional bishop profile with the Cardinals bird-on-bat on its body. Bishop 2: The same profile bearing the Blue Note. One warm, one cool. One summer, one winter.",
+rationale:"Bishops work in pairs but never share a square — one lives on light, one on dark. The Cardinals and Blues do the same thing: two sports, two seasons, two emotional registers that never overlap. The Cardinals have 11 World Series titles and Busch Stadium roaring in October. The Blues won the Stanley Cup in 2019 and the whole city lost its mind in June. Together they cover the entire emotional calendar of St. Louis. Light square, dark square. Summer, winter. One side of the heart, then the other. They never cross paths, but together they cover everything."},
+{role:"Knight",name:"Budweiser Clydesdales",sym:"♞",height:'3.75″',goldImgs:["images/gold/goldknight.PNG"],redImgs:["images/red/redknight.png"],
+form:"A Clydesdale — the full animal, not just the head. Feathered hooves, braided mane, the powerful arched neck, the muscular chest. Standing foursquare on the base, built to carry weight. Not a generic horse. A specific, recognizable, St. Louis horse.",
+rationale:"Knights are horses. The Clydesdales are THE St. Louis horse — pulling the Budweiser wagon since 1933, introduced to celebrate the end of Prohibition. They walk through downtown during the holidays. They appear at the brewery campus year-round. The knight is the only piece on the board that can leap over others — the move nobody sees coming, the piece that changes geometry. The Clydesdales are the same: impossibly large animals moving with impossible grace. These are the pieces visitors reach for first. This Bud's for you."},
+{role:"Rook",name:"6900 Delmar & 6901 Washington",sym:"♜",height:'3.5″ / 4″',goldImgs:["images/gold/gold6900rook.PNG","images/gold/gold6901rook.PNG"],redImgs:["images/red/red6900rook.png","images/red/red6901rook.PNG"],
+form:"Two buildings, two rooks. Rook 1: 6900 Delmar — the Christian Science building at chess scale. Horizontal massing, Classical Revival facade, the coffered dome visible on top, the colonnade suggested with minimal columns. The dome is the crown, sitting low and wide. Rook 2: 6901 Washington — the Methodist church at chess scale. Gothic Revival verticality, the bell tower rising from the body, Gothic pinnacles at the corners, pointed arch windows along the flanks. The tower pulls the eye upward.",
+rationale:"The rook is the castle. These are the castles. 6900 Delmar was built in 1924 by T.P. Barnett — a dome building listed on the National Register of Historic Places since 1980. Corinthian columns, coffered interior, steel-and-concrete structure hidden inside a classical shell. 6901 Washington was built in 1920 — Gothic Revival reaching skyward, a congregation of over 1,000 at its peak. Same block, same era, opposite architectures. One spreads wide. One reaches up. Now they're miniworld's home — an immersive destination where miniature worlds come to life inside two landmark churches. Two buildings on a chessboard. Two buildings on a city block. The dialogue between them is the same in both worlds — a conversation across the board, move by move, century by century."},
+{role:"Pawn",name:"Fleur-de-lis",sym:"♟",height:'2.5″',goldImgs:["images/gold/goldpawn.PNG"],redImgs:["images/red/redpawn.PNG"],
+form:"The three-petaled fleur-de-lis rising from a pawn base. Clean, heraldic, repeatable at small scale. All eight identical — the city's pattern, uniform and democratic. The form is simple enough to read at 2.5 inches, complex enough to reward a closer look.",
+rationale:"On every lamppost. Every civic building. The city flag. The fleur-de-lis is the oldest and most repeated symbol in St. Louis — French origin, royal lineage, democratic deployment. It predates the Arch, the Cardinals, the brewery. It was here before the city was American. Eight across the front rank — the first line of defense, the smallest unit of the city's identity. Individually expendable, collectively devastating. Promotion awaits any pawn that crosses the board."}
 ];
 
-// Build piece buttons
 const btnContainer = document.getElementById('piece-buttons');
 pieces.forEach((p,i) => {
   const btn = document.createElement('button');
@@ -104,14 +123,18 @@ pieces.forEach((p,i) => {
 function showPiece(idx) {
   document.querySelectorAll('.piece-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
   const p = pieces[idx];
-  const container = document.getElementById('piece-detail-container');
-  container.innerHTML = `<div style="max-width:640px;margin:32px auto 0;border:1px solid rgba(196,162,101,0.15);background:rgba(255,255,255,0.02)">
+  const imgPairs = p.goldImgs.map((g,i) => {
+    const w = p.goldImgs.length > 1 ? "120px" : "160px";
+    return `<div class="pair"><img src="${g}" alt="${p.name} gold" style="width:${w}"><img src="${p.redImgs[i]}" alt="${p.name} red" style="width:${w};border-color:rgba(180,80,60,0.15)"></div>`;
+  }).join('');
+  document.getElementById('piece-detail-container').innerHTML = `<div style="max-width:640px;margin:32px auto 0;border:1px solid rgba(196,162,101,0.15);background:rgba(255,255,255,0.02)">
     <div style="padding:32px 28px;border-bottom:1px solid rgba(196,162,101,0.08)">
       <span style="font-size:36px;color:#C4A265;margin-right:16px">${p.sym}</span>
       <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C4A265;font-family:'Trebuchet MS',sans-serif">${p.role} — ${p.height}</span>
       <div style="font-size:24px;color:#E8D5A8;margin-top:4px;letter-spacing:1px">${p.name}</div>
     </div>
     <div style="padding:24px 28px">
+      <div class="piece-imgs">${imgPairs}</div>
       <div class="section-label">Form</div>
       <p style="font-size:14px;line-height:1.8;color:#B0A590;margin-bottom:24px">${p.form}</p>
       <div class="section-label">Rationale</div>
@@ -127,7 +150,6 @@ function showView(id) {
   event.target.classList.add('active');
 }
 
-// Build board content
 const boardSections = [
 ["Chess Is a Miniature World","Every chess game compresses a civilization onto 64 squares. Two sides, 32 inhabitants, and the entire arc of an encounter — from first contact through escalation, sacrifice, and resolution — unfolds in the space of an hour. Opening theory refined across centuries. Middlegame battles that mirror real conflict. Endgames that distill survival to its essentials. The board is a world. The pieces are its population. The game is their history. For fifteen hundred years, people have gathered around this miniature world to think, compete, and connect. Chess doesn't belong to any nation. It belongs to the species."],
 ["The Arch Ellipse","Two parabolic arcs sweep from opposite edges of the board, meeting at the center to form a symmetrical ellipse across the 64 squares. One arc rises from white's edge, one from black's. Both players see their own arch. The form is shared, neutral, and it creates a geometry on the playing surface that exists nowhere else in chess. The Gateway Arch is too important to be one piece on one square. It doesn't belong to either side. It belongs to the game — the ground the entire encounter is played on. St. Louis is the arena."],
@@ -140,7 +162,6 @@ const boardSections = [
 ];
 document.getElementById('board-content').innerHTML = '<h2 style="font-size:24px;font-weight:400;letter-spacing:2px;text-align:center;margin-bottom:40px;color:#E8E0D4">The Board</h2>' + boardSections.map(s => `<div class="card"><div class="section-label">${s[0]}</div><p>${s[1]}</p></div>`).join('');
 
-// Build narrative
 const narrativePts = [
 ["Chess has always been a miniature world","Two civilizations on 64 squares. Kings, sacrifice, strategy — the entire drama of human encounter compressed to the size of a tabletop. For fifteen hundred years, this miniature world has been the common language of thinkers, competitors, and cultures that share nothing else. It crosses every border. It needs no translation. The game is the world, reduced to its essentials."],
 ["St. Louis made itself the capital of that world","Not by accident. By will, by investment, by sustained commitment to the idea that this city could be where the best players on earth come to compete. The Chess Club. The World Chess Hall of Fame. The Sinquefield Cup. The U.S. Championship. Congress recognized it. The players confirmed it. The infrastructure exists. The culture exists. St. Louis is the capital."],
@@ -149,9 +170,8 @@ const narrativePts = [
 ["What a Chess Set Proves","This set exists before the buildings open. It was conceived, designed, and produced in weeks — from conversation to object. That speed is the point. The same process that made this set will make ornaments, prints, miniatures, children's editions, seasonal pieces, and objects that haven't been imagined yet. Every exhibition inside the buildings generates a product line. Every conversation generates a collectible. The venue doesn't just sell tickets. It makes things — and the things travel further than any visitor."],
 ["Edition of ten","Each set numbered and signed. Produced in the same year the next World Champion will be decided. A physical artifact that appreciates alongside the project. By the time the venue opens, these sets are irreplaceable."]
 ];
-document.getElementById('narrative-content').innerHTML = '<h2 style="font-size:24px;font-weight:400;letter-spacing:2px;text-align:center;margin-bottom:40px;color:#E8E0D4">The Game and the City</h2>' + narrativePts.map(n => `<div class="narrative-card"><h3>${n[0]}</h3><p>${n[1]}</p></div>`).join('') + `<div class="close-block"><div class="icon">♚</div><p>The Chess Club and the Clydesdales. The Cardinals and the Blues. The dome and the bell tower. The rivers and the fleur-de-lis. The Arch across the board. One city, one game, one miniature world.</p><div class="lp">Let's Play.</div><div class="emm">Every move matters.</div></div>`;
+document.getElementById('narrative-content').innerHTML = '<h2 style="font-size:24px;font-weight:400;letter-spacing:2px;text-align:center;margin-bottom:40px;color:#E8E0D4">The Game and the City</h2>' + narrativePts.map(n => `<div class="narrative-card"><h3>${n[0]}</h3><p>${n[1]}</p></div>`).join('') + `<div class="close-block"><p>The Chess Club and the Rivers. The Cardinals and the Blues. The Clydesdales. The dome and the bell tower. The fleur-de-lis. The Arch across the board. One city, one game, one miniature world.</p><div class="lp">Let's Play.</div><div class="emm">Every move matters.</div></div>`;
 
-// Build venue
 const venueSections = [
 ["Two Buildings, One Campus","6900 Delmar: 13,412 SF. Neoclassical dome, auditorium, mezzanine, lower level with classrooms and support spaces, foyer, reading rooms, spiral staircases, and a coffered dome that becomes a programmable projection canvas. 6901 Washington: 21,884 SF. Gothic Revival sanctuary with 250-seat capacity plus 60-seat balcony, 10 classrooms, fellowship hall, kitchen, offices, and a bell tower visible from blocks away. Combined: over 35,000 SF of programmable space across two connected buildings that were operating as fully functional churches and schools less than five years ago. The infrastructure exists. The bones are extraordinary."],
 ["Immersive Miniature Worlds","The anchor attraction. Physical miniature landscapes, scenes, and worlds that visitors walk through and around — in the tradition of Miniatur Wunderland in Hamburg, which opened in eight months and became Germany's most-visited tourist attraction. Visible workshops where the worlds are built in real time. A programmable dome that transforms the 1924 coffered ceiling into a living sky. Seasonal programming that gives visitors a reason to return. The attraction is never the same twice because the worlds inside it are always being built."],
