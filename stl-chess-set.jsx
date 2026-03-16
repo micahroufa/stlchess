@@ -94,12 +94,12 @@ const boardConcept = {
       text: "Every chess game compresses a civilization onto 64 squares. Two sides, 32 inhabitants, and the entire arc of an encounter \u2014 from first contact through escalation, sacrifice, and resolution \u2014 unfolds in the space of an hour. Opening theory refined across centuries. Middlegame battles that mirror real conflict. Endgames that distill survival to its essentials. The board is a world. The pieces are its population. The game is their history. For fifteen hundred years, people have gathered around this miniature world to think, compete, and connect. Chess doesn\u2019t belong to any nation. It belongs to the species."
     },
     {
-      label: "The Arch Ellipse",
-      text: "Two parabolic arcs sweep from opposite edges of the board, meeting at the center to form a symmetrical ellipse across the 64 squares. One arc rises from white\u2019s edge, one from black\u2019s. Both players see their own arch. The form is shared, neutral, and it creates a geometry on the playing surface that exists nowhere else in chess. The Gateway Arch is too important to be one piece on one square. It doesn\u2019t belong to either side. It belongs to the game \u2014 the ground the entire encounter is played on. St. Louis is the arena."
+      label: "The Arch Inlay",
+      text: "The Gateway Arch is too important to be one piece on one square. It doesn\u2019t belong to either side. It belongs to the game. Two tiny arch silhouettes \u2014 open catenary curves inlaid in metal, flush with the walnut border. One in gold on the gold side. One in copper-red on the red side. Each player sits behind their own arch. The playing surface stays pure \u2014 64 squares, unmarked, honoring the tournament tradition. The Arch lives in the border where it belongs: not on the board but around it. St. Louis is the arena."
     },
     {
       label: "The World Stage",
-      text: "The 2026 Candidates Tournament is underway in Cyprus. The winner will challenge Gukesh Dommaraju \u2014 the youngest World Chess Champion in history, crowned in December 2024 at age 18 \u2014 for the title later this year. The match location is undecided. St. Louis has hosted more elite chess events than any American city in the last decade. The Sinquefield Cup is the only U.S. stop on the Grand Chess Tour. When the world\u2019s best players sit down to decide who is the strongest, this city has earned a seat at the table. The Arch ellipse on the board is a claim: the world\u2019s game, played on St. Louis ground."
+      text: "The 2026 Candidates Tournament is underway in Cyprus. The winner will challenge Gukesh Dommaraju \u2014 the youngest World Chess Champion in history, crowned in December 2024 at age 18 \u2014 for the title later this year. The match location is undecided. St. Louis has hosted more elite chess events than any American city in the last decade. The Sinquefield Cup is the only U.S. stop on the Grand Chess Tour. When the world\u2019s best players sit down to decide who is the strongest, this city has earned a seat at the table. The Arch on the border is a claim: the world\u2019s game, played on St. Louis ground."
     },
     {
       label: "Two Sides, One City",
@@ -107,7 +107,7 @@ const boardConcept = {
     },
     {
       label: "Material \u2014 The Board",
-      text: "Walnut and maple \u2014 the traditional pairing for tournament play. Dark walnut squares, light maple squares, walnut border. The Arch ellipse etched as fine lines into the playing surface \u2014 two arcs sweeping from opposite edges across the entire board, forming an oval at the center. Each player sees an arch rising from their side toward the other. The form unites the two sides before a single piece is moved. Visible but never competing with play. 21\" x 21\" to accommodate 4.5\" kings."
+      text: "Walnut and maple \u2014 the traditional pairing for tournament play. Dark walnut squares, light maple squares, walnut border. A thin black inlay line frames the playing surface on all four sides \u2014 separating the 64 squares from the border as a contained field. Two Gateway Arch silhouettes inlaid in metal, one on each player\u2019s border edge: gold on the gold side, copper-red on the red side. Open catenary curves, flush with the walnut, barely visible from playing distance, precise on close inspection. The playing surface is unmarked. 21\" x 21\" to accommodate 4.5\" kings."
     },
     {
       label: "Material \u2014 The Pieces",
